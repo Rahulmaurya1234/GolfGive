@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:5000/api';
+const BASE_URL = "https://golfgive-3ljo.onrender.com";
 
 const api = axios.create({
   baseURL: BASE_URL,
@@ -27,18 +27,21 @@ api.interceptors.response.use(
   }
 );
 
-// ── Auth ──────────────────────────────────────────────
+
 // POST /auth/signup → { name, email, password, mobile_no }
+
 export const signup = (data) => api.post('/auth/signup', data);
 
 // POST /auth/verify-otp → { email, otp }
+
 export const verifyOtp = (data) => api.post('/auth/verify-otp', data);
 
 // POST /auth/login → { email, password } → { token }
+
 export const login = (data) => api.post('/auth/login', data);
 
-// ── User ──────────────────────────────────────────────
 // GET /user/profile → user object
+
 export const getProfile = () => api.get('/user/profile');
 
 export const updateProfile = (data) =>
@@ -48,20 +51,23 @@ export const changePassword = (data) =>
   api.post('/user/change-password', data);
 
 // GET /dashboard → { userInfo, subscription, charity, scores, participation, winnings }
+
 export const getDashboard = () => api.get('/dashboard');
 
-// ── Scores ────────────────────────────────────────────
 // GET /scores
+
 export const getScores = () => api.get('/scores');
 
 // POST /scores → { value: number } (range 1-45, max 5 rolling)
+
 export const postScore = (data) => api.post('/scores', data);
 
-// ── Subscription ──────────────────────────────────────
 // GET /subscription/status
+
 export const getSubscriptionStatus = () => api.get('/subscription/status');
 
 // POST /subscription/create → { plan: "monthly"|"yearly", charityId, charityPercentage }
+
 export const createSubscription = (data) => api.post('/subscription/create', data);
 
 // POST /subscription/cancel
@@ -70,29 +76,25 @@ export const cancelSubscription = () => api.post('/subscription/cancel');
 // GET /charity
 export const getCharities = () => api.get('/charity');
 
-// ── Admin // ── Admin ─────────────────────────────────────────────
 
-// ✅ FIX: correct endpoint
+
 export const getAdminStats = () => api.get('/admin/stats');
 
-// 🎲 simulate draw (preview only)
+
 export const simulateDraw = () => api.post('/admin/simulate-draw');
 
-// 🚀 run actual draw (DB save)
+
 export const runDraw = () => api.post('/admin/run-draw');
 
-// 🏆 get all winners
+//  get all winners
 export const getWinners = () => api.get('/admin/winners');
 
-// ✅ verify winner
+//  verify winner
 export const verifyWinner = (data) =>
   api.post('/admin/verify-winner', data);
 
 
 
-// ==========================
-// 👑 ADMIN GROUP (NEW)
-// ==========================
 export const adminAPI = {
   getStats: () => api.get('/admin/stats'),
   simulateDraw: () => api.post('/admin/simulate-draw'),
