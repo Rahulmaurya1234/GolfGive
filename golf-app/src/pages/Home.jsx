@@ -185,12 +185,12 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/signup">
-              <Button size="lg" className="bg-white text-indigo-700 hover:bg-gray-100">
+              <Button size="lg" className="bg-indigo-600 text-white hover:bg-indigo-700">
                 Create Free Account
               </Button>
             </Link>
             <Link to="/login">
-              <Button size="lg" variant="ghost" className="text-white border-white/30 border hover:bg-white/10">
+              <Button size="lg" className="border border-white text-white hover:bg-white hover:text-indigo-700">
                 Sign In
               </Button>
             </Link>
