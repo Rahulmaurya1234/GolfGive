@@ -1,0 +1,25 @@
+import mongoose from "mongoose";
+
+const scoreSchema = new mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true
+  },
+
+  value: {
+    type: Number,
+    required: true,
+    min: 1,
+    max: 45
+  },
+
+  //AUTO DATE (best approach)
+  date: {
+    type: Date,
+    default: Date.now
+  }
+
+}, { timestamps: true });
+
+export default mongoose.model("Score", scoreSchema);
