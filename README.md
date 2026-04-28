@@ -157,7 +157,16 @@ Payment gateway integration
 Admin dashboard enhancements
 API documentation (Swagger/Postman)
 
-Author
+
+## Screenshots
+
+<p align="center">
+  <img src="Home.png" width="800"/>
+  <img src="Prize.png" width="800"/>
+  <img src="Work.png" width="800"/>
+</p>
+
+## Author
 
 Rahul Maurya
 GitHub: https://github.com/Rahulmaurya1234
